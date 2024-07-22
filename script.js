@@ -1,7 +1,7 @@
 function buscarCEP() {
     // Obtém o valor do input de CEP
     const cep = document.getElementById('cep').value;
-
+    //validacao necessaria para cidades brasileiras
     // Verifica se o CEP possui 8 dígitos
     if (cep.length !== 8) {
         alert('Por favor, digite um CEP válido com 8 dígitos.');
@@ -19,6 +19,7 @@ function buscarCEP() {
             }
             return response.text();
         })
+        
         .then(data => {
             // Parser para XML
             const parser = new DOMParser();
